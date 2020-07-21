@@ -2,7 +2,7 @@
 
 
 # Typescript-app boilerplate
-Simple boilerplate twitter-copy-app build in typescript using react, express, typeorm and mysql. Deployed via docker (compose).
+Simple boilerplate twitter-copy-app build in typescript using graphql (apollo), react, express and mongodb. Deployed via docker (compose).
 
 ## Demo 🚀
 Live demo `work-in-progress`
