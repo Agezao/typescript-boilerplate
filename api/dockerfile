@@ -1,0 +1,11 @@
+FROM mhart/alpine-node:12
+
+WORKDIR /api
+
+COPY package.json ./
+
+COPY ./api .
+
+RUN npm i
+
+CMD ["npm", "start"]
