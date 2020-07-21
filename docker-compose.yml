@@ -2,16 +2,14 @@ version: '3'
 services:
   database:
     container_name: twitter-app-db
-    image: "mysql:latest"
+    image: "mongo:latest"
     ports:
-      - 3306:3306
+      - 27017:27017
     environment:
-      - MYSQL_PASSWORD=devdatabase
-      - MYSQL_USER=development
-      - MYSQL_DATABASE=twitter-app
-      - MYSQL_RANDOM_ROOT_PASSWORD=1
+      - MONGO_INITDB_ROOT_PASSWORD=devdatabase
+      - MONGO_INITDB_ROOT_USERNAME=development
     volumes:
-      - ./database/data:/var/lib/mysql
+      - ./database/data:/data/db
   # api:
   #   build:
   #     context: .
