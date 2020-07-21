@@ -1,12 +1,12 @@
 {
   "env": {
     "browser": false,
-    "es7": true,
+    "es6": true,
     "node": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "tsconfig.json",
+    "project": "./api/tsconfig.json",
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
