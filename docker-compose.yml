@@ -9,17 +9,18 @@ services:
       - MYSQL_PASSWORD=devdatabase
       - MYSQL_USER=development
       - MYSQL_DATABASE=twitter-app
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
     volumes:
       - ./database/data:/var/lib/mysql
-  api:
-    build:
-      context: .
-      dockerfile: ./api/dockerfile
-    ports:
-      - "8080:8080"
-    depends_on:
-      - "database"
-    restart: unless-stopped
-    environment:
-      - NODE_ENV=prod
-      - DB_HOST=database
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: ./api/dockerfile
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - "database"
+  #   restart: unless-stopped
+  #   environment:
+  #     - NODE_ENV=prod
+  #     - DB_HOST=database
