@@ -11,4 +11,15 @@ services:
       - MYSQL_DATABASE=twitter-app
     volumes:
       - ./database/data:/var/lib/mysql
-  
+  api:
+    build:
+      context: .
+      dockerfile: ./api/dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "database"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=prod
+      - DB_HOST=database

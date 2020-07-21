@@ -4,7 +4,7 @@
   "description": "A starting point for a fully typescript app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "docker-compose up"
   },
   "keywords": [
     "typescript",
