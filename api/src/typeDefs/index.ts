@@ -1,29 +1,7 @@
 import { gql } from 'apollo-server-express';
+import fs from 'fs';
+import path from 'path';
 
-export default gql(
-  `type User {
-    id: ID!
-    email: String!
-    name: String!
-    password: String!
-  }
-  
-  type Tweet {
-    id: ID!
-    message: String!
-    createdAt: String!
-    user: User!
-  }
+const typeDefs = fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8").toString();
 
-  type Query {
-    tweets: [Tweet!]!
-    users: [User!]!
-    me(id: String!): User!
-  }
-  
-  type Mutation {
-    createUser(name: String!, email: String!, password: String!): User!
-    createTweet(message: String!, createdAt: String!, user: ID!): Tweet!
-  }
-  `
-);
+export default gql(typeDefs);

@@ -4,8 +4,8 @@
   "description": "API (and UI host) for the boilerplate twitter app",
   "scripts": {
     "clean": "rimraf coverage build tmp",
-    "build": "tsc -p",
-    "build:watch": "tsc -w -p",
+    "build": "tsc -p tsconfig.json && cp ./src/typeDefs/schema.graphql ./dist/typeDefs/schema.graphql",
+    "build:watch": "tsc -w -p tsconfig.json",
     "dev": "ts-node src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .ts,.tsx"

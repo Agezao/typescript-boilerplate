@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Debug API",
       "program": "${workspaceFolder}/api/src/index.ts",
-      "preLaunchTask": "tsc: build - api/tsconfig.json",
+      "preLaunchTask": "Build",
       "outFiles": ["${workspaceFolder}/api/dist/**/*.js"]
     }
   ]

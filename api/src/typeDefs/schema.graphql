@@ -1,0 +1,24 @@
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  password: String!
+}
+
+type Tweet {
+  id: ID!
+  message: String!
+  createdAt: String!
+  user: User!
+}
+
+type Query {
+  tweets: [Tweet!]!
+  users: [User!]!
+  user(id: String!): User!
+}
+
+type Mutation {
+  createUser(name: String!, email: String!, password: String!): ID!
+  createTweet(message: String!, createdAt: String!, user: ID!): ID!
+}

@@ -9,6 +9,23 @@
 			],
 			"group": "build",
 			"label": "tsc: build - api/tsconfig.json"
-		}
+		},
+		{
+      "type": "shell",
+			"command": "cp",
+			"args": [
+				"api/src/typeDefs/schema.graphql",
+				"api/dist/typeDefs/schema.graphql"
+			],
+			"group": "build",
+      "label": "Copy schema"
+    },
+    {
+			"label": "Build",
+			"dependsOn": [
+				"tsc: build - api/tsconfig.json",
+				"Copy schema"
+			]
+    }
 	]
 }
